@@ -1,3 +1,9 @@
+shermans-aquarium (3.0.1-9+leste1) unstable; urgency=low
+
+  * maemo-leste deployment from fremantle package 
+
+ -- Norayr Chilingarian <norayr@arnet.am>  Fri, 24 Jun 2022 03:04:37 +0400
+
 shermans-aquarium (3.0.1-9) unstable; urgency=low
 
   * Fixed path to icons in sherman.xml 
