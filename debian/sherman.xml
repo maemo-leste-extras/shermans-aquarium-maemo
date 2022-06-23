@@ -1,0 +1,9 @@
+<theme>
+    <name>Shermans Aquarium</name>
+    <exec_path>/usr/bin/shermans</exec_path>
+    <category>Unknown</category>
+     <window_id>-window-id</window_id>                                                                               
+     <view>-view</view>
+    <icon_on>/usr/share/livewp/external_icons/sherman.png</icon_on>       
+    <icon_off>/usr/share/livewp/external_icons/shermand.png</icon_off>       
+</theme>

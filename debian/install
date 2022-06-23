@@ -1,0 +1,2 @@
+debian/lintian/shermans-aquarium	/usr/share/lintian/overrides
+debian/linda/shermans-aquarium		/usr/share/linda/overrides

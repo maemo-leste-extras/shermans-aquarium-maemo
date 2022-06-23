@@ -1,0 +1,22 @@
+<oaf_info>
+	<oaf_server iid="OAFIID:GNOME_@APPLET_NAME@Applet_Factory" type="exe" location="@GNOMEDIR@/bin/@APPLET_NAME@">
+		<oaf_attribute name="repo_ids" type="stringv">
+			<item value="IDL:Bonobo/GenericFactory:1.0"/>
+			<item value="IDL:Bonobo/Unknown:1.0"/>
+		</oaf_attribute>
+		<oaf_attribute name="name" type="string" value="@APPLET_NAME@ applet Factory"/>
+		<oaf_attribute name="description" type="string" value="Factory for @APPLET_NAME@ applet"/>
+	</oaf_server>
+
+	<oaf_server iid="OAFIID:GNOME_@APPLET_NAME@Applet" type="factory" location="OAFIID:GNOME_@APPLET_NAME@Applet_Factory">
+		<oaf_attribute name="repo_ids" type="stringv">
+			<item value="IDL:GNOME/Vertigo/PanelAppletShell:1.0"/>
+			<item value="IDL:Bonobo/Control:1.0"/>
+			<item value="IDL:Bonobo/Unknown:1.0"/>
+		</oaf_attribute>
+		<oaf_attribute name="name" type="string" value="@APPLET_NICE_NAME@"/>
+		<oaf_attribute name="description" type="string" value="@APPLET_DESCRIPTION_SHORT@"/>
+		<oaf_attribute name="panel:category" type="string" value="@APPLET_GROUP@"/>
+		<oaf_attribute name="panel:icon" type="string" value="@APPLET_NAME_ICON@"/>
+	</oaf_server>
+</oaf_info>

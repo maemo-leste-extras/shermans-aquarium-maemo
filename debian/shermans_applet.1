@@ -1,0 +1,109 @@
+.TH SHERMANS-AQUARIUM "1" "March 2005" "shermans_applet 3.0.1" "User Commands"
+.SH NAME
+shermans_applet \- dockapp/wmapplet and Gnome panel applet
+
+.SH SYNOPSIS
+.B shermans_applet
+[\fIOPTION\fR...]
+.SH DESCRIPTION
+.TP
+\fB\-\-load\-modules\fR=\fIMODULE1\fR,MODULE2,...
+Dynamic modules to load
+.PP
+Help options
+.TP
+\-?, \fB\-\-help\fR
+Show this help message
+.TP
+\fB\-\-usage\fR
+Display brief usage message
+.PP
+GTK+
+.TP
+\fB\-\-gdk\-debug\fR=\fIFLAGS\fR
+Gdk debugging flags to set
+.TP
+\fB\-\-gdk\-no\-debug\fR=\fIFLAGS\fR
+Gdk debugging flags to unset
+.TP
+\fB\-\-display\fR=\fIDISPLAY\fR
+X display to use
+.TP
+\fB\-\-screen\fR=\fISCREEN\fR
+X screen to use
+.TP
+\fB\-\-sync\fR
+Make X calls synchronous
+.TP
+\fB\-\-name\fR=\fINAME\fR
+Program name as used by the window
+manager
+.TP
+\fB\-\-class\fR=\fICLASS\fR
+Program class as used by the window
+manager
+.TP
+\fB\-\-gtk\-debug\fR=\fIFLAGS\fR
+Gtk+ debugging flags to set
+.TP
+\fB\-\-gtk\-no\-debug\fR=\fIFLAGS\fR
+Gtk+ debugging flags to unset
+.TP
+\fB\-\-g\-fatal\-warnings\fR
+Make all warnings fatal
+.TP
+\fB\-\-gtk\-module\fR=\fIMODULE\fR
+Load an additional Gtk module
+.PP
+Bonobo activation Support
+.TP
+\fB\-\-oaf\-ior\-fd\fR=\fIFD\fR
+File descriptor to print IOR on
+.TP
+\fB\-\-oaf\-activate\-iid\fR=\fIIID\fR
+IID to activate
+.TP
+\fB\-\-oaf\-private\fR
+Prevent registering of server with OAF
+.PP
+GNOME GConf Support
+.PP
+GNOME Library
+.TP
+\fB\-\-disable\-sound\fR
+Disable sound server usage
+.TP
+\fB\-\-enable\-sound\fR
+Enable sound server usage
+.TP
+\fB\-\-espeaker\fR=\fIHOSTNAME\fR:PORT
+Host:port on which the sound server
+to use is running
+.TP
+\fB\-\-version\fR
+2.8.1
+.PP
+Session management
+.TP
+\fB\-\-sm\-client\-id\fR=\fIID\fR
+Specify session management ID
+.TP
+\fB\-\-sm\-config\-prefix\fR=\fIPREFIX\fR
+Specify prefix of saved configuration
+.TP
+\fB\-\-sm\-disable\fR
+Disable connection to session manager
+.PP
+GNOME GUI Library
+.TP
+\fB\-\-disable\-crash\-dialog\fR
+Disable Crash Dialog
+
+.SH AUTHOR
+\fBSherman's aquarium\fR was written by Jonas Aaberg.  See
+/usr/share/doc/shermans-aquarium/AUTHORS for other contributors.
+.PP
+This manual page was written by Jose M. Moya <josem@debian.org>, for
+the Debian  GNU/Linux system (but may be used by others).
+.SH "SEE ALSO"
+/usr/share/doc/shermans-aquarium/*

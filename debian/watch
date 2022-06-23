@@ -1,0 +1,3 @@
+version=3
+http://aquariumapplet.sourceforge.net/download.html \
+  http://prdownloads.sourceforge.net/aquariumapplet/shermans_aquarium-(.*)\.tar\.bz2\?download
