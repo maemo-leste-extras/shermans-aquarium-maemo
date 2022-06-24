@@ -1,5 +1,5 @@
 
-/* 
+/*
 
    Sherman's aquarium - Screensaver part
 
@@ -60,9 +60,9 @@ typedef struct {
 
 /* For Maemo */
 
-#include <libosso.h>                                                            
-
+#include <libosso.h>
 #include <dbus/dbus.h>
+
 #include <dbus/dbus-glib.h>
 
 #ifdef DARWIN
@@ -167,14 +167,14 @@ void screensaver_draw_image(int x, int y, int idx, int rev, SA_Image *image)
     if(!rev)
 	thisfish[curr_dest] = SDL_CreateRGBSurfaceFrom(image->image,
 						       image->width,
-						       (int)((float)image->full_height*(float)(idx+1) / 
+						       (int)((float)image->full_height*(float)(idx+1) /
 							     (float)image->frames + 0.5),
 						       32,image->rowstride,
 						       RMASK, GMASK, BMASK, AMASK);
     else
 	thisfish[curr_dest] = SDL_CreateRGBSurfaceFrom(image->rev,
 						       image->width,
-						       (int)((float)image->full_height*(float)(idx+1) / 
+						       (int)((float)image->full_height*(float)(idx+1) /
 							     (float)image->frames + 0.5),
 						       32,image->rowstride,
 						       RMASK, GMASK, BMASK, AMASK);
@@ -298,7 +298,7 @@ void comics_load(void)
     for(i=0;i<gdk_pixbuf_get_height(comic_pic);i++){
 	sy = i * srs;
 	dy = (i+ys) * ad.xmax + xs;
-	
+
 	for(j=0;j<gdk_pixbuf_get_width(comic_pic);j++){
 	    ad.bgr[(dy+j)*3+0] = ad.rgb[(dy+j)*3+0] = src[sy + j*(3+alpha)+0];
 	    ad.bgr[(dy+j)*3+1] = ad.rgb[(dy+j)*3+1] = src[sy + j*(3+alpha)+1];
@@ -351,7 +351,7 @@ void screensaver_main_sdl(void)
 
 	for(i=0;i<curr_dest;i++)
 	    SDL_BlitSurface(thisfish[i],&fish_src[i],screen,&fish_dest[i]);
-	
+
 
 	/* If we get a SIGTERM from screensaver in this loop, and we later do a SDL_Quit()
 	   X will get problems. So we have to avoid calling SDL_Quit if a sigterm is caught
@@ -394,7 +394,7 @@ void screensaver_main_sdl(void)
 	    frames=0;
 	}
 	usleep(delay);
-	
+
 
 	while(SDL_PollEvent(&event)){
 	    switch(event.type){
@@ -417,7 +417,7 @@ void screensaver_main_sdl(void)
 		    main_loop=1;
 		break;
 	    }
-	}    
+	}
     }
 
 #ifdef PERFORMACE_CHECK
@@ -469,12 +469,12 @@ void screensaver_main_gdk(void)
 
        msg = dbus_connection_pop_message(dbus_conn_session);
 
-       if (NULL == msg){  
-          continue; 
+       if (NULL == msg){
+          continue;
        }
        if ( dbus_message_get_member (msg) &&
 	   !strncmp( "play_livebg_on_view", dbus_message_get_member (msg),19)){
-	       pause_in_view = 0; 
+	       pause_in_view = 0;
        }
        if ( dbus_message_get_member (msg) &&
             !strncmp( "pause_livebg_on_view", dbus_message_get_member (msg),19)){
@@ -496,7 +496,7 @@ void init_sdl(int sdl_flags)
 
     signal(SIGTERM, screensaver_quit);
     atexit(SDL_Quit);
-    
+
 
     if(!SDL_VideoModeOK(screen_width,screen_height, DEPTH, sdl_flags)){
 	printf("Sorry, video mode %dx%d in %d bits isn't supported by hardware\n",
@@ -522,9 +522,9 @@ void init_sdl(int sdl_flags)
     /* Start with all black */
     SDL_FillRect(screen,NULL,0x000000);
 
-    screen_image = SDL_CreateRGBSurfaceFrom(ad.rgb, ad.xmax, ad.ymax, DEPTH, ad.xmax*3, 
+    screen_image = SDL_CreateRGBSurfaceFrom(ad.rgb, ad.xmax, ad.ymax, DEPTH, ad.xmax*3,
 					    RMASK, GMASK, BMASK, 0);
-    background = SDL_CreateRGBSurfaceFrom(ad.bgr, ad.xmax, ad.ymax, DEPTH, ad.xmax*3, 
+    background = SDL_CreateRGBSurfaceFrom(ad.bgr, ad.xmax, ad.ymax, DEPTH, ad.xmax*3,
 					  RMASK, GMASK, BMASK, 0);
 
 
@@ -572,7 +572,7 @@ void screensaver_init()
 
     screen_height = 480;
     screen_width = 800;
-    
+
     osso = osso_initialize("org.maemo.sherman", "3.0", TRUE, NULL);
     initialize_dbus();
 
@@ -603,7 +603,7 @@ void screensaver_init()
 
     ad.xmax = screen_width;
     ad.ymax = screen_height;
-  
+
     ad.virtual_aquarium_x = ad.xmax + 2 * VIRTUAL_AQUARIUM_DX;
     ad.virtual_aquarium_y = ad.ymax + 2 * VIRTUAL_AQUARIUM_DY;
 
@@ -630,15 +630,15 @@ void screensaver_init()
     fish_settings = fish_get_settings_ptr();
     bubble_settings = bubble_get_settings_ptr();
 
-    fish_dest = g_malloc0(sizeof(SDL_Rect)*(fish_settings->num_fish + 
+    fish_dest = g_malloc0(sizeof(SDL_Rect)*(fish_settings->num_fish +
 					    bubble_settings->max_bubbles));
     fish_src = g_malloc0(sizeof(SDL_Rect)*(fish_settings->num_fish +
 					   bubble_settings->max_bubbles));
-    clean_dest = g_malloc0(sizeof(SDL_Rect)*(fish_settings->num_fish  + 
+    clean_dest = g_malloc0(sizeof(SDL_Rect)*(fish_settings->num_fish  +
 					     bubble_settings->max_bubbles));
 
     thisfish = g_malloc0(sizeof(SDL_Surface*)*(fish_settings->num_fish + bubble_settings->max_bubbles));
-    
+
 }
 
 int htoi(char *str)
@@ -667,7 +667,7 @@ void screensaver_init_param(int argc, char **argv)
     Sound_settings *s, sound_settings = {0,TYPE_MP3, NULL};
     Bubble_settings *bub, bubble_settings = {20};
     Bottom_settings *b, bottom_settings = {1,5,1,75,3};
-    Background_settings *bg, background_settings = {NULL,NULL, 2,0, 
+    Background_settings *bg, background_settings = {NULL,NULL, 2,0,
 						    (GaiColor){0, 100, 150, 0},
 						    (GaiColor){10,120, 250, 0},
 						    (GaiColor){0,0,0,0}};
@@ -697,7 +697,7 @@ void screensaver_init_param(int argc, char **argv)
 	{"ucr", required_argument, NULL, ARG_UCR},
 	{"ucg", required_argument, NULL, ARG_UCG},
 	{"ucb", required_argument, NULL, ARG_UCB},
-	
+
 	{"bg_image_file", required_argument, NULL, ARG_BG_IMAGE_FILE},
 
 	{"comics", no_argument, NULL, ARG_COMICS},
@@ -1018,7 +1018,7 @@ void aquarium_draw_pic_alpha(SA_Image *image, int w, int h, int x, int y, int id
 	screensaver_draw_image(x, y, idx, 0, image);
     else
 	draw_pic_alpha(image->image, w, h, x, y, idx,alpha);
-} 
+}
 
 
 void aquarium_clean_image(int x, int y, int w, int h)
@@ -1042,7 +1042,7 @@ GdkPixbuf *gai_load_image(char *fname)
     g_free(full_name);
 
     return pix;
-    
+
 }
 void gai_display_error_continue(char *msg)
 {
