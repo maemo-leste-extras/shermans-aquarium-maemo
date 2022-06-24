@@ -3,7 +3,7 @@
 # Makefile for Sherman's aquarium
 #
 
-CC = i486-linux-gnu-gcc
+CC = aarch64-linux-gnu-gcc
 
 PREFIX = /usr
 GNOMEDIR = /usr
@@ -11,9 +11,9 @@ GNOMEDIR = /usr
 INSTALL_PATH=$(DESTDIR)/usr
 
 # Setting up the CFLAGS and LDFLAGS variables 
-CFLAGS += -Wall -Wno-strict-aliasing -O3 -DIMAGE_PATH=\"/usr/share/pixmaps/shermans\"    -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -DMAEMO_CHANGES -I/usr/include/gtk-2.0 -I/usr/lib/gtk-2.0/include -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12   -I/usr/include/dbus-1.0 -I/usr/lib/dbus-1.0/include -I/usr/include/dbus-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/lib/dbus-1.0/include  
+CFLAGS += -Wall -Wno-strict-aliasing -O3 -DIMAGE_PATH=\"/usr/share/pixmaps/shermans\"    -I/usr/include/SDL -D_GNU_SOURCE=1 -D_REENTRANT -pthread -I/usr/include/gtk-2.0 -I/usr/lib/aarch64-linux-gnu/gtk-2.0/include -I/usr/include/gio-unix-2.0 -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/pango-1.0 -I/usr/include/harfbuzz -I/usr/include/pango-1.0 -I/usr/include/fribidi -I/usr/include/glib-2.0 -I/usr/lib/aarch64-linux-gnu/glib-2.0/include -I/usr/include/uuid -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/dbus-1.0 -I/usr/lib/dbus-1.0/include -I/usr/include/dbus-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/lib/dbus-1.0/include  
 LDFLAGS_GAI = $(LDFLAGS)   
-LDFLAGS_SDL = $(LDFLAGS) -L/usr/lib -lSDL  -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lgdk_pixbuf-2.0 -lpangocairo-1.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lgmodule-2.0 -lglib-2.0  
+LDFLAGS_SDL = $(LDFLAGS) -L/usr/lib/aarch64-linux-gnu -lSDL  -lgtk-x11-2.0 -lgdk-x11-2.0 -lpangocairo-1.0 -latk-1.0 -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lpangoft2-1.0 -lpango-1.0 -lgobject-2.0 -lglib-2.0 -lfontconfig -lfreetype -lX11
 
 OBJS = fish.o background.o bubble.o draw.o bottom.o soundeffects.o images.o
 OBJS_GAI = settings.o pref.o date.o clock.o matrix.o over.o thermometer.o leds.o aquarium.o tetris.o plasma.o  status_linux26.o

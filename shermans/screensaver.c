@@ -60,8 +60,9 @@ typedef struct {
 
 /* For Maemo */
 
-#include <libosso.h>                                                                                                                                                             
-#include <dbus/dbus.h>                                                                                                                                                             
+#include <libosso.h>                                                            
+
+#include <dbus/dbus.h>
 #include <dbus/dbus-glib.h>
 
 #ifdef DARWIN
