@@ -3028,10 +3028,12 @@ $as_echo_n "checking for SDL version ($sdl_version) >= 1.2.0... " >&6; }
 
       if test x$SDL = xyes ; then
 	 SDL_CFLAGS=`sdl-config --cflags`
-   # noch here, adding proper dbus CFLAGS, this way?
+   # noch here, adding proper dbus CFLAGS, not sure it is best to add those to SDL_CFLAGS.
    DBUS_CFLAGS=`pkg-config --cflags dbus-1`
    SDL_CFLAGS="$SDL_CFLAGS $DBUS_CFLAGS"
 	 SDL_LIBS=`sdl-config --libs`
+   # noch here, not sure it is the best way to add, but need to add -lX11
+   SDL_LIBS="$SDL_LIBS -lX11"
 	 SCREENSAVER=shermans
 	 INSTALL_SCREENSAVER=install_screensaver
 	 { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
