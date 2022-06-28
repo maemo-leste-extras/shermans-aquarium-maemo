@@ -2,14 +2,14 @@ Source: shermans-aquarium
 Section: user/desktop
 Priority: optional
 Maintainer: Jose M. Moya <josem@debian.org>
-Build-Depends: debhelper (>= 4.1.0), cdbs, libsdl1.2-dev, autotools-dev, libgtk2.0-dev, libosso-dev, maemo-optify 
+Build-Depends: debhelper (>= 4.1.0), cdbs, libsdl1.2-dev, autotools-dev, libgtk2.0-dev, libosso-dev
 Standards-Version: 3.7.3
-Homepage: http://aquariumapplet.sourceforge.net/
+Homepage: https://github.com/norayr/shermans_aquarium
 
 Package: shermans-aquarium
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends} live-wallpaper (>= 0.8)
-Xsbc-Bugtracker: https://garage.maemo.org/tracker/?atid=6358&group_id=1822
+Xsbc-Bugtracker: https://github.com/maemo-leste-extras/shermans-aquarium-maemo
 XB-Maemo-Display-Name: Sherman's aquarium
 Description: Sherman's aquarium  theme for LiveWallpaper 
  .
