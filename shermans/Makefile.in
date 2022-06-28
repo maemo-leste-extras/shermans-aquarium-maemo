@@ -11,7 +11,7 @@ GNOMEDIR = @GNOMEDIR@
 INSTALL_PATH=$(DESTDIR)@INSTALL_PATH@
 
 # Setting up the CFLAGS and LDFLAGS variables 
-CFLAGS += -Wall -Wno-strict-aliasing -O3 -DIMAGE_PATH=\"@APPLET_IMAGE_PATH@\" @DGAI@ @GAI_CFLAGS@ @XMMS_CFLAGS@ @SDL_CFLAGS@ @GTK_CFLAGS@ -I/usr/include/dbus-1.0 -I/usr/lib/dbus-1.0/include -I/usr/include/dbus-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/lib/dbus-1.0/include  
+CFLAGS += -Wall -Wno-strict-aliasing -O0 -DIMAGE_PATH=\"@APPLET_IMAGE_PATH@\" @DGAI@ @GAI_CFLAGS@ @XMMS_CFLAGS@ @SDL_CFLAGS@ @GTK_CFLAGS@ -I/usr/include/dbus-1.0 -I/usr/lib/dbus-1.0/include -I/usr/include/dbus-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/lib/dbus-1.0/include  
 LDFLAGS_GAI = $(LDFLAGS) @GAI_LIBS@ @XMMS_LIBS@ @SYSTEM_SPECIFIC_LIBS@
 LDFLAGS_SDL = $(LDFLAGS) @SDL_LIBS@ @SYSTEM_SPECIFIC_LIBS@ @GTK_LIBS@
 
