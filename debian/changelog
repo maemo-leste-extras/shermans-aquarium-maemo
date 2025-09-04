@@ -1,3 +1,9 @@
+shermans-aquarium (3.0.3-1+leste1) unstable; urgency=low
+
+  * daedalus build 
+
+ -- Norayr Chilingarian <norayr@arnet.am>  Thu, 04 Sep 2025 05:19:37 +0400
+
 shermans-aquarium (3.0.2-9+leste1) unstable; urgency=low
 
   * chimaera build 
